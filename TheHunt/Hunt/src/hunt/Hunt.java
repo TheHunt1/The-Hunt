@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package hunt;
+import byui.cit260.theHunt.model.Actor;
 import byui.cit260.theHunt.model.AmmoStore;
 import byui.cit260.theHunt.model.Game;
 import byui.cit260.theHunt.model.HitOrMissScene;
@@ -101,6 +102,14 @@ public class Hunt {
         
         String fieldLocation = field.toString();
         System.out.println(fieldLocation);
+        
+        Actor animal = new Actor();
+        animal.setName("Yoggie");
+        animal.setAnimal("Bear");
+        
+        String prey = animal.toString();
+        System.out.println(prey);
+        
         
     }
     
