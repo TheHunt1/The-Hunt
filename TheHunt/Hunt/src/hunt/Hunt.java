@@ -5,6 +5,7 @@
  */
 package hunt;
 import byui.cit260.theHunt.model.AmmoStore;
+import byui.cit260.theHunt.model.Game;
 import byui.cit260.theHunt.model.HitOrMissScene;
 import byui.cit260.theHunt.model.HuntScene;
 import byui.cit260.theHunt.model.Inventory;
@@ -79,6 +80,13 @@ public class Hunt {
         
         String purchase = weapon.toString();
         System.out.println(purchase);
+        
+        Game openGame = new Game();
+        openGame.setAddPlayer("M Kekauoha");
+        
+        String playerName = openGame.toString();
+        System.out.println(playerName);
+        
     }
     
 }
