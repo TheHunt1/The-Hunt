@@ -9,6 +9,7 @@ import byui.cit260.theHunt.model.Game;
 import byui.cit260.theHunt.model.HitOrMissScene;
 import byui.cit260.theHunt.model.HuntScene;
 import byui.cit260.theHunt.model.Inventory;
+import byui.cit260.theHunt.model.Location;
 import byui.cit260.theHunt.model.Map;
 import byui.cit260.theHunt.model.Player;
 import byui.cit260.theHunt.model.PlayerStatus;
@@ -94,6 +95,12 @@ public class Hunt {
         
         String huntLocation = mapLocation.toString();
         System.out.println(huntLocation);
+        
+        Location field = new Location();
+        field.setVisited("Yes");
+        
+        String fieldLocation = field.toString();
+        System.out.println(fieldLocation);
         
     }
     
