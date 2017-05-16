@@ -9,6 +9,7 @@ import byui.cit260.theHunt.model.Game;
 import byui.cit260.theHunt.model.HitOrMissScene;
 import byui.cit260.theHunt.model.HuntScene;
 import byui.cit260.theHunt.model.Inventory;
+import byui.cit260.theHunt.model.Map;
 import byui.cit260.theHunt.model.Player;
 import byui.cit260.theHunt.model.PlayerStatus;
 import byui.cit260.theHunt.model.WeaponStore;
@@ -86,6 +87,13 @@ public class Hunt {
         
         String playerName = openGame.toString();
         System.out.println(playerName);
+        
+        Map mapLocation = new Map();
+        mapLocation.setAnimalChoice("Deer");
+        mapLocation.setLocationDesciption("Mountain Range");
+        
+        String huntLocation = mapLocation.toString();
+        System.out.println(huntLocation);
         
     }
     
