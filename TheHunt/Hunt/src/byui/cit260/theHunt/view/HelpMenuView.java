@@ -9,10 +9,10 @@ package byui.cit260.theHunt.view;
  *
  * @author MW
  */
-class HelpMenuView {
+public class HelpMenuView {
 
     void displayHelpMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayHelpMenu() function called ***");
     }
     
 }
