@@ -5,6 +5,8 @@
  */
 package byui.cit260.theHunt.view;
 
+import byui.cit260.theHunt.control.GameControl;
+import hunt.Hunt;
 import java.util.Scanner;
 
 /**
@@ -86,7 +88,10 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        GameControl.createNewGame(Hunt.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
@@ -94,7 +99,13 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayedHelpMenu function called ***");
+        System.out.println("\n===================="
+                          + "\n  Help Menu"
+                          + "\n===================="
+                          );
+        
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
     }
 
     private void saveGame() {
