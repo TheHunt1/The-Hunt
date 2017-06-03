@@ -36,5 +36,13 @@ public class MainMenuView {
        }
        while (!done);
     }
+
+    private String getmenuOption() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private boolean doAction(String menuOption) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
