@@ -5,6 +5,10 @@
  */
 package byui.cit260.theHunt.view;
 
+import byui.cit260.theHunt.control.GameControl;
+import hunt.Hunt;
+import java.util.Scanner;
+
 /**
  *
  * @author Dragon
@@ -13,7 +17,7 @@ public class MainMenuView {
     private String menu;
     
     public MainMenuView (){
-        this.menu= "\n"
+        System.out.println("\n"
                 + "\n-------------------------------"
                 + "\n   Main Menu                   "
                 + "\n-------------------------------"
@@ -22,19 +26,84 @@ public class MainMenuView {
                 + "\nH - Get help on how to play"
                 + "\nS - Save game"
                 + "\nQ - Quit"
-                + "\n-------------------------------";
+                + "\n-------------------------------");
     }
-    void displayMainMenuView() {
+    
+    public void displayMainMenuView() {
         boolean done = false; //set flag to not done
        do {
            //prompt for and get player's name
-           String menuOption = this.getmenuOption();
+           String menuOption = this.getMenuOption();
            if(menuOption.toUpperCase().equals("Q"))
                return;
            
            done = this.doAction(menuOption);
        }
        while (!done);
+    }
+
+
+    private String getMenuOption() {
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid) {
+            System.out.println("\nEnter your choice");
+            
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if(value.length() < 1) {
+                System.out.println("\nInvalid value; value can't be blank");
+                continue;
+                
+            }
+            break;
+        }
+        return value;
+    }
+
+    private boolean doAction(String choice) {
+        choice = choice.toUpperCase();
+        
+        switch (choice) {
+            case "N":
+                this.startNewGame();
+                break;
+            case "G":
+            this.startExistingGame();
+            break;
+            case "H":
+                this.displayHelpMenu();
+                break;
+            case "S":
+                this.saveGame();
+                break;
+            default:
+                System.out.println("\n*** Invalid Selection *** Try again");
+                break;
+        }
+        return false;
+    }
+
+    private void startNewGame() {
+       GameControl.createNewGame(Hunt.getPlayer());
+       
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayMenu();
+    }
+
+    private void startExistingGame() {
+     System.out.println("\n startExistingGame called");   
+    }
+
+    private void displayHelpMenu() {
+      System.out.println("\n displayHelpMenu called");  
+    }
+
+    private void saveGame() {
+     System.out.println("\n saveGame called");   
     }
     
 }
