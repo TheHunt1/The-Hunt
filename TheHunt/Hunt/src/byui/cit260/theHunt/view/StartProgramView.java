@@ -104,5 +104,6 @@ public class StartProgramView {
        
        mainMenuView.displayMainMenuView();
     }
-       
+ 
+}     
     
