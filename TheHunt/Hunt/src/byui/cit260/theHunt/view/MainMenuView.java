@@ -5,6 +5,8 @@
  */
 package byui.cit260.theHunt.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Dragon
@@ -38,11 +40,65 @@ public class MainMenuView {
     }
 
     private String getmenuOption() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid) {
+            System.out.println("\n" + this.menu);
+            
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if(value.length() < 1) {
+                System.out.println("\nInvalid value; value can't be blank");
+                continue;
+                
+            }
+            break;
+        }
+        return value;
     }
 
-    private boolean doAction(String menuOption) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private boolean doAction(String choice) {
+        
+        choice = choice.toUpperCase();
+        
+        switch (choice) {
+            case "N":
+                this.startNewGame();
+                break;
+            case "G":
+                this.startExistingGame();
+                break;
+            case "H":
+                this.displayHelpMenu();
+                break;
+            case "S":
+                this.saveGame();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+        
+        return false;
+    }
+
+    private void startNewGame() {
+        System.out.println("*** startNewGame function called ***");
+    }
+
+    private void startExistingGame() {
+        System.out.println("*** startExistingFame function called ***");
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("*** displayedHelpMenu function called ***");
+    }
+
+    private void saveGame() {
+        System.out.println("*** savedGame function called ***");
     }
     
 }
