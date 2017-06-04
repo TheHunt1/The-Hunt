@@ -24,7 +24,7 @@ public class HelpMenuView {
                 + "\nA - Understanding ammo surplus"
                 + "\nW - Understanding weapons"
                 + "\nT - Understanding Terrains (including weather)"
-                + "\nQ - Quit"
+                + "\nB - Back"
                 + "\n-------------------------------";
     }
 

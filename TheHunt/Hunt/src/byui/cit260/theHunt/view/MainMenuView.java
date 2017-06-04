@@ -17,7 +17,7 @@ public class MainMenuView {
     private String menu;
     
     public MainMenuView (){
-        this.menu= "\n"
+        this.menu = ("\n"
                 + "\n-------------------------------"
                 + "\n   Main Menu                   "
                 + "\n-------------------------------"
@@ -26,7 +26,7 @@ public class MainMenuView {
                 + "\nH - Get help on how to play"
                 + "\nS - Save game"
                 + "\nQ - Quit"
-                + "\n-------------------------------";
+                + "\n-------------------------------");
     }
     void displayMainMenuView() {
         boolean done = false; //set flag to not done
@@ -63,7 +63,7 @@ public class MainMenuView {
     }
 
     private boolean doAction(String choice) {
-        
+       
         choice = choice.toUpperCase();
         
         switch (choice) {
@@ -71,8 +71,8 @@ public class MainMenuView {
                 this.startNewGame();
                 break;
             case "G":
-                this.startExistingGame();
-                break;
+            this.startExistingGame();
+            break;
             case "H":
                 this.displayHelpMenu();
                 break;
@@ -83,15 +83,15 @@ public class MainMenuView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+
         return false;
     }
 
     private void startNewGame() {
-        GameControl.createNewGame(Hunt.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+       GameControl.createNewGame(Hunt.getPlayer());
+       
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
