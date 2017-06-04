@@ -32,7 +32,7 @@ public class MainMenuView {
         boolean done = false; //set flag to not done
        do {
            //prompt for and get player's name
-           String menuOption = this.getmenuOption();
+           String menuOption = this.getMenuOption();
            if(menuOption.toUpperCase().equals("Q"))
                return;
            
@@ -41,7 +41,7 @@ public class MainMenuView {
        while (!done);
     }
 
-    private String getmenuOption() {
+    private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
