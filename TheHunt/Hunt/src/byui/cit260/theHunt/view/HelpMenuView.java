@@ -83,6 +83,9 @@ public class HelpMenuView {
             case "T":
                 this.displayTerrain();
                 break;
+            case "B":
+                new MainMenuView().displayMainMenuView();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
