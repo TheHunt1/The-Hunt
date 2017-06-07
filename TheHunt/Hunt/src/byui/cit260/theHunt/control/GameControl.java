@@ -30,5 +30,9 @@ public class GameControl {
 
         System.out.println("\n createNewGame called");
     }
-       
+     
+    public static void quitGame(){
+        System.out.println("We hope to see you soon!");
+        System.exit(0);
+    }
 }

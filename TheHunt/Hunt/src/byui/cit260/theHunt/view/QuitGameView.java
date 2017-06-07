@@ -5,6 +5,7 @@
  */
 package byui.cit260.theHunt.view;
 
+import byui.cit260.theHunt.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -57,8 +58,7 @@ public class QuitGameView {
         
         switch (choice) {
             case "Y":
-                System.out.println("We hope to see you soon!");
-                System.exit(0);
+                GameControl.quitGame();
             case "N":
             new MainMenuView().displayMainMenuView();
             break;
