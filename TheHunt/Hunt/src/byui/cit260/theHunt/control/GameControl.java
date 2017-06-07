@@ -7,6 +7,7 @@ package byui.cit260.theHunt.control;
 
 import byui.cit260.theHunt.model.Player;
 import hunt.Hunt;
+import java.util.Scanner;
 
 /**
  *
@@ -29,5 +30,5 @@ public class GameControl {
 
         System.out.println("\n createNewGame called");
     }
-    
+       
 }

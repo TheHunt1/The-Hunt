@@ -34,7 +34,7 @@ public class MainMenuView {
            //prompt for and get player's name
            String menuOption = this.getMenuOption();
            if(menuOption.toUpperCase().equals("Q"))
-               return;
+               new QuitGameView().displayMainMenuView();
            
            done = this.doAction(menuOption);
        }
