@@ -5,31 +5,30 @@
  */
 package byui.cit260.theHunt.view;
 
-import byui.cit260.theHunt.control.GameControl;
-import hunt.Hunt;
 import java.util.Scanner;
 
 /**
  *
  * @author Dragon
  */
-public class MainMenuView {
-    private String menu;
+public class LocationMenuView {
+private String menu;
     
-    public MainMenuView (){
+    public LocationMenuView (){
         this.menu = ("\n"
                 + "\n-------------------------------"
-                + "\n   Main Menu                   "
+                + "\n   Location Menu                   "
                 + "\n-------------------------------"
-                + "\nN - Start new game"
-                + "\nG - Get and start saved game"
-                + "\nH - Get help on how to play"
-                + "\nS - Save game"
+                + "\n Choose your hunting terrain"
+                + "\nR - The Rockies"
+                + "\nF - Florida Swamps"
+                + "\nW - Western Plains"
+                + "\nJ - Jungle"
                 + "\nQ - Quit"
                 + "\n-------------------------------");
     }
     
-    public void displayMainMenuView() {
+    public void displayLocationMenuView() {
         boolean done = false; //set flag to not done
        do {
            //prompt for and get player's name
@@ -70,17 +69,21 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "N":
-                this.startNewGame();
+            case "R":
+                System.out.println("\n You are hunting in the Rockies");
+                this.AnimalMenuView ();
                 break;
-            case "G":
-            this.startExistingGame();
+            case "F":
+                System.out.println("\n You are hunting in the Florida Swamps");
+            this.AnimalMenuView ();
             break;
-            case "H":
-                this.displayHelpMenu();
+            case "W":
+                System.out.println("\n You are hunting in the Western Plains");
+                this.AnimalMenuView ();
                 break;
-            case "S":
-                this.saveGame();
+            case "J":
+                System.out.println("\n You are hunting in the jungle");
+                this.AnimalMenuView ();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -90,34 +93,9 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-       GameControl.createNewGame(Hunt.getPlayer());
-       
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayGameMenuView();
+    private void AnimalMenuView() {
+        AnimalMenuView animalMenuView = new AnimalMenuView();
+        animalMenuView.displayAnimalMenuView();
     }
-
-
- 
-
-    private void saveGame() {
-     System.out.println("\n saveGame called");   
-        GameControl.createNewGame(Hunt.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
-    }
-
-    private void startExistingGame() {
-        System.out.println("*** startExistingFame function called ***");
-    }
-
-    private void displayHelpMenu() {
-
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
-    }
-
-
     
 }

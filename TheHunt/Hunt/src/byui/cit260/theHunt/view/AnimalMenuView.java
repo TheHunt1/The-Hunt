@@ -5,31 +5,31 @@
  */
 package byui.cit260.theHunt.view;
 
-import byui.cit260.theHunt.control.GameControl;
-import hunt.Hunt;
 import java.util.Scanner;
 
 /**
  *
  * @author Dragon
  */
-public class MainMenuView {
-    private String menu;
+public class AnimalMenuView {
+private String menu;
     
-    public MainMenuView (){
+    public AnimalMenuView (){
         this.menu = ("\n"
                 + "\n-------------------------------"
-                + "\n   Main Menu                   "
+                + "\n   Animal Menu                   "
                 + "\n-------------------------------"
-                + "\nN - Start new game"
-                + "\nG - Get and start saved game"
-                + "\nH - Get help on how to play"
-                + "\nS - Save game"
+                + "\n Choose what animal you want to"
+                + "\n hunt."
+                + "\nA - Alligator"
+                + "\nD - Deer"
+                + "\nR - Rabbit"
+                + "\nP - Pheasant"
                 + "\nQ - Quit"
                 + "\n-------------------------------");
     }
     
-    public void displayMainMenuView() {
+    public void displayAnimalMenuView() {
         boolean done = false; //set flag to not done
        do {
            //prompt for and get player's name
@@ -70,17 +70,22 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "N":
-                this.startNewGame();
+            case "A":
+                System.out.println("\n You chose to hunt an alligator");
+                this.MapView();
                 break;
-            case "G":
-            this.startExistingGame();
+            case "D":
+            System.out.println("\n You chose to hunt a deer");
+            this.MapView();
             break;
-            case "H":
-                this.displayHelpMenu();
+            case "R":
+                System.out.println("\n You chose to hunt a rabbit");
+                this.MapView();
                 break;
-            case "S":
-                this.saveGame();
+                
+            case "P":
+                System.out.println("\n You chose to hunt a pheasant");
+                this.MapView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -90,34 +95,8 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-       GameControl.createNewGame(Hunt.getPlayer());
-       
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayGameMenuView();
+    private void MapView() {
+        System.out.println("\n MapView function called"); //This will become another view where player chooses the size of the map
     }
-
-
- 
-
-    private void saveGame() {
-     System.out.println("\n saveGame called");   
-        GameControl.createNewGame(Hunt.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
-    }
-
-    private void startExistingGame() {
-        System.out.println("*** startExistingFame function called ***");
-    }
-
-    private void displayHelpMenu() {
-
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
-    }
-
-
-    
+  
 }
