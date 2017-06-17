@@ -23,7 +23,7 @@ public class WeaponStoreMenuView extends View {
                 + "\nB - Back");   
     }
     
-@Override
+    @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
