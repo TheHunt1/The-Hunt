@@ -7,6 +7,7 @@ package byui.cit260.theHunt.control;
 
 import byui.cit260.theHunt.model.Game;
 import byui.cit260.theHunt.model.Inventory;
+import byui.cit260.theHunt.model.Inventory.InventoryItem;
 import byui.cit260.theHunt.model.Map;
 import byui.cit260.theHunt.model.Player;
 import hunt.Hunt;
@@ -36,8 +37,14 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        Inventory[] inventoryList = GameControl.createInventoryList();
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
+        
+        Rifle rifle = new Rifle();
+        game.setRifle(rifle);
+        
+        Bow bow = new Bow();
+        game.setBow(bow);
         
         Map map = MapControl.createMap();
         game.setMap(map);
@@ -50,9 +57,41 @@ public class GameControl {
         System.out.println("We hope to see you soon!");
         System.exit(0);
     }
+    
+    public enum Item {
+        food,
+        gear,
+        weapon,
+        ammo;
+    }
 
-    public static Inventory[] createInventoryList() {
-        System.out.println("*** Called createInventoryList() in GameControl ***");
-        return null;
+    public static InventoryItem[] createInventoryList() {
+        InventoryItem[] inventory = new InventoryItem[4];
+        
+        InventoryItem food = new InventoryItem();
+        food.setDescription("Food");
+        food.setQuantityInStock(0);
+        food.setRequiredAmount(0);
+        inventory[InventoryItem.food.ordinal()] = food;
+        
+        InventoryItem gear = new InventoryItem();
+        gear.setDescription("Gear");
+        gear.setQuantityInStock(0);
+        gear.setRequiredAmount(0);
+        inventory[InventoryItem.gear.ordinal()] = gear;
+        
+        InventoryItem weapon = new InventoryItem();
+        weapon.setDescription("Weapon");
+        weapon.setQuantityInStock(0);
+        weapon.setRequiredAmount(0);
+        inventory[InventoryItem.weapon.ordinal()] = weapon;
+        
+        InventoryItem ammo = new InventoryItem();
+        ammo.setDescription("Ammo");
+        ammo.setQuantityInStock(0);
+        ammo.setRequiredAmount(0);
+        inventory[InventoryItem.ammo.ordinal()] = ammo;
+        
+        return inventory;
     }
 }

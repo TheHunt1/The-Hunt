@@ -5,6 +5,8 @@
  */
 package byui.cit260.theHunt.model;
 
+import byui.cit260.theHunt.control.Bow;
+import byui.cit260.theHunt.control.Rifle;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -100,6 +102,18 @@ public class Game implements Serializable {
     @Override
     public String toString() {
         return "Game{" + "mapSelect=" + mapSelect + ", addPlayer=" + addPlayer + '}';
+    }
+
+    public void setInventory(Inventory.InventoryItem[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRifle(Rifle rifle) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBow(Bow bow) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -110,6 +110,13 @@ public class Inventory implements Serializable{
     public String toString() {
         return "Inventory{" + "food=" + food + ", gear=" + gear + ", ammo=" + ammo + '}';
     }
+
+    public static class InventoryItem {
+
+        public InventoryItem() {
+        }
+
+    }
    
     
    
