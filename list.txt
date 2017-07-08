@@ -1,0 +1,4 @@
+Deer is worth 10 Points
+Rabbit is worth 7 points
+Alligator is worth 15 points
+Pheasant is worth 8 points
