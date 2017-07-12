@@ -8,6 +8,7 @@ package byui.cit260.theHunt.view;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -36,12 +37,12 @@ public class WeaponStoreMenuView extends View {
                 this.WeaponList();
                 break;
             case "P":
-                System.out.println("\n*** Use the money you earned from your kills "
+                this.console.println("\n*** Use the money you earned from your kills "
                         + "\nto purchase a weapons. Here you will select and purchase "
                         + "\nweapons. ***");
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -69,11 +70,10 @@ public class WeaponStoreMenuView extends View {
 
         try {
             for (String object : aList) {
-                //System.out.println(object);
                 out = new FileWriter(filePath);
                 out.write(object);
             }
-            //in = new FileReader("list.txt");
+
         } finally {
             if (in != null) {
                 in.close();
@@ -82,6 +82,5 @@ public class WeaponStoreMenuView extends View {
                 out.close();
             }
         }
-
     }
 }

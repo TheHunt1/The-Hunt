@@ -26,7 +26,7 @@ public class GameMenuView extends View {
                 + "\nM - View Map"
                 + "\nH - Hunt Scene" //Tempory placement
                 + "\nW - Weapon Store"
-                + "\nQ - Quit"
+                + "\nQ - Quit Game"
                 + "\n-------------------------------");
     }
 
@@ -51,7 +51,7 @@ public class GameMenuView extends View {
                 this.WeaponStore();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -59,22 +59,22 @@ public class GameMenuView extends View {
     }
 
     private void SelectLocation() {
-        System.out.println("SelectLocation called");
+        this.console.println("SelectLocation called");
         MoveView moveView = new MoveView();
         moveView.display();
 
     }
 
     private void PlayerInfo() {
-        System.out.println("PlayerInfo function called");
+        this.console.println("PlayerInfo function called");
     }
 
     public void displayMap() {
         Map map = hunt.Hunt.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
-        System.out.println();
+        this.console.println();
         for (int row = 0; row < locations.length; row++) {
-            System.out.print(row + " "); // print row numbers to side of map
+            this.console.print(row + " "); // print row numbers to side of map
             for (int column = 0; column < locations.length; column++) {
                 // set default indicators as blanks
                 String leftIndicator = " ";
@@ -88,20 +88,20 @@ public class GameMenuView extends View {
                     leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "<"; // same as above
                 }
-                System.out.print("|"); // start map with a |
+                this.console.print("|"); // start map with a |
                 if (locations[row][column].getScene() == null) {
                     // No scene assigned here so use ?? for the symbol
-                    System.out.print(leftIndicator + "??" + rightIndicator);
+                    this.console.print(leftIndicator + "??" + rightIndicator);
                 } else {
-                    System.out.print(leftIndicator
+                    this.console.print(leftIndicator
                             + locations[row][column].getScene().getMapSymbol()
                             + rightIndicator);
                 }
             }
-            System.out.println("|");
+            this.console.println("|");
         }
-        System.out.println("You are currently at: " + map.getCurrentScene().getName());
-        System.out.println(map.getCurrentScene().getDescription());
+        this.console.println("You are currently at: " + map.getCurrentScene().getName());
+        this.console.println(map.getCurrentScene().getDescription());
     }
 
     private void HuntScene() {
