@@ -26,7 +26,8 @@ public class GameMenuView extends View {
                 + "\nM - View Map"
                 + "\nH - Hunt Scene" //Tempory placement
                 + "\nW - Weapon Store"
-                + "\nQ - Quit Game"
+                + "\nE - End Game"
+                + "\nQ - Back to Main Menu"
                 + "\n-------------------------------");
     }
 
@@ -50,7 +51,7 @@ public class GameMenuView extends View {
             case "W":
                 this.WeaponStore();
                 break;
-            case "Q":
+            case "E":
                 this.QuitGame();
                 break;
             default:
