@@ -21,7 +21,7 @@ public class WeaponStoreMenuView extends View {
                 + "\n---------------------------------"
                 + "\n      Weapons Store              "
                 + "\n---------------------------------"
-                + "\nW - Weapons list (including cost)"
+                + "\nW - Weapons list"
                 + "\nP - Purchase weapon"
                 + "\nB - Back");
     }
