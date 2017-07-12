@@ -69,9 +69,11 @@ public class WeaponStoreMenuView extends View {
         FileWriter out = null;
 
         try {
+            
+            out = new FileWriter(filePath);
             for (String object : aList) {
-                out = new FileWriter(filePath);
-                out.write(object);
+                
+                out.write("\r\n" + object);
             }
 
         } finally {
