@@ -23,7 +23,8 @@ public class WeaponStoreMenuView extends View {
                 + "\n---------------------------------"
                 + "\nW - Weapons list"
                 + "\nP - Purchase weapon"
-                + "\nB - Back");
+                + "\nB - Back"
+                + "\n-------------------------------");
     }
 
     @Override
