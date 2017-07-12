@@ -50,6 +50,9 @@ public class GameMenuView extends View {
             case "W":
                 this.WeaponStore();
                 break;
+            case "Q":
+                this.QuitGame();
+                break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -112,6 +115,11 @@ public class GameMenuView extends View {
     private void WeaponStore() {
         WeaponStoreMenuView weaponStoreMenuView = new WeaponStoreMenuView();
         weaponStoreMenuView.display();
+    }
+
+    private void QuitGame() {
+        QuitGameView quitGameView = new QuitGameView();
+        quitGameView.display();
     }
 
 }

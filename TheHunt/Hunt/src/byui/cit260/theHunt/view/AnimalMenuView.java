@@ -70,7 +70,7 @@ public class AnimalMenuView extends View {
     }
 
     private void MapView() {
-        System.out.println("\n MapView function called"); //This will become another view where player chooses the size of the map
+        this.console.println("\n MapView function called"); //This will become another view where player chooses the size of the map
     }
 
     private void AnimalList() {
