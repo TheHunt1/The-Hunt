@@ -38,7 +38,7 @@ public class GameMenuView extends View {
         switch (choice) {
             case "L":
                 this.SelectLocation();
-                this.displayMap();
+                break;
             case "D":
                 this.PlayerInfo();
                 break;
