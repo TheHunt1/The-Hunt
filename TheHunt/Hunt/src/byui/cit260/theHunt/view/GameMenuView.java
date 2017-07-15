@@ -21,7 +21,7 @@ public class GameMenuView extends View {
                 + "\n-------------------------------"
                 + "\n   Game Menu                   "
                 + "\n-------------------------------"
-                + "\nL - Select the loctaion"
+                + "\nL - Select location"
                 + "\nD - Display Player Info"
                 + "\nM - View Map"
                 + "\nH - Hunt Scene" //Tempory placement

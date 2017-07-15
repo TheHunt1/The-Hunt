@@ -33,8 +33,8 @@ public class HelpMenuView extends View {
 
         switch (value) {
             case "M":
-                this.console.println("\n You input two numbers, "
-                        + "\n the X and Y to move to that coordinates");
+                this.console.println("\n Go to --Select Location--, "
+                        + "\n then enter the 2 letter symbol for the location.");
                 break;
             case "B":
                 this.console.println("\n You get money from your kills "
