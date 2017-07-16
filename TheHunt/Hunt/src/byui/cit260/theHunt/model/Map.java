@@ -32,7 +32,7 @@ public class Map implements Serializable{
             return;
         }
         
-        this.totalRows= totalRows;
+        this.totalRows = totalRows;
         this.totalColumns = totalColums;
         
         this.locations = new Location [totalRows] [totalColums];
