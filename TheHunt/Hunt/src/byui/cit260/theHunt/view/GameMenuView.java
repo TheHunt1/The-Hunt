@@ -6,6 +6,7 @@
  */
 package byui.cit260.theHunt.view;
 
+import byui.cit260.theHunt.model.Animal;
 import byui.cit260.theHunt.model.Location;
 import byui.cit260.theHunt.model.Map;
 import java.util.Scanner;
