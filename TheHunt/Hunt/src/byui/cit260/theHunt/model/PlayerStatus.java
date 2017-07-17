@@ -12,21 +12,22 @@ import java.util.Objects;
  * @author Dragon
  */
 public class PlayerStatus implements Serializable{
-  private String name; 
+//  private String name; 
   private int energy;
   private int money;
+  private int score;
 
     public PlayerStatus() {
     }
 
   
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public int getEnergy() {
         return energy;
@@ -44,12 +45,20 @@ public class PlayerStatus implements Serializable{
         this.money = money;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + this.energy;
-        hash = 53 * hash + this.money;
+        hash = 43 * hash + this.energy;
+        hash = 43 * hash + this.money;
+        hash = 43 * hash + this.score;
         return hash;
     }
 
@@ -71,7 +80,7 @@ public class PlayerStatus implements Serializable{
         if (this.money != other.money) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (this.score != other.score) {
             return false;
         }
         return true;
@@ -79,8 +88,9 @@ public class PlayerStatus implements Serializable{
 
     @Override
     public String toString() {
-        return "PlayerStatus{" + "name=" + name + ", energy=" + energy + ", money=" + money + '}';
+        return "PlayerStatus{" + "energy=" + energy + ", money=" + money + ", score=" + score + '}';
     }
-  
+    
+    
   
 }

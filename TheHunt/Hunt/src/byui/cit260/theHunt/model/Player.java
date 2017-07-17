@@ -17,7 +17,7 @@ public class Player implements Serializable{
   private String name; 
   private int x_axis;
   private int y_axis;
-  private int energy;
+//  private int energy;
 
     public Player() {
     }
@@ -48,21 +48,20 @@ public class Player implements Serializable{
         this.y_axis = y_axis;
     }
 
-    public int getEnergy() {
-        return energy;
-    }
-
-    public void setEnergy(int energy) {
-        this.energy = energy;
-    }
+//    public int getEnergy() {
+//        return energy;
+//    }
+//
+//    public void setEnergy(int energy) {
+//        this.energy = energy;
+//    }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + this.x_axis;
-        hash = 23 * hash + this.y_axis;
-        hash = 23 * hash + this.energy;
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.name);
+        hash = 53 * hash + this.x_axis;
+        hash = 53 * hash + this.y_axis;
         return hash;
     }
 
@@ -84,9 +83,6 @@ public class Player implements Serializable{
         if (this.y_axis != other.y_axis) {
             return false;
         }
-        if (this.energy != other.energy) {
-            return false;
-        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
@@ -95,8 +91,8 @@ public class Player implements Serializable{
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", x_axis=" + x_axis + ", y_axis=" + y_axis + ", energy=" + energy + '}';
+        return "Player{" + "name=" + name + ", x_axis=" + x_axis + ", y_axis=" + y_axis + '}';
     }
-  
-  
+
+    
 }
