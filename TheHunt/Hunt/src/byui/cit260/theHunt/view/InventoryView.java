@@ -18,7 +18,14 @@ import hunt.Hunt;
 public class InventoryView extends View {
 
     public InventoryView() {
-        //Enter code here
+        super("\n"
+                + "\n-------------------------------"
+                + "\n   Inventory                  "
+                + "\n-------------------------------"
+                + "\nV - View Map"
+                + "\nI - Inventory"
+                + "\nQ - Quit"
+                + "\n-------------------------------");
     }
 
     @Override

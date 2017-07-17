@@ -27,6 +27,7 @@ public class GameMenuView extends View {
                 + "\nM - View Map"
                 + "\nH - Hunt Scene" //Tempory placement
                 + "\nW - Weapon Store"
+                + "\nS - View Score"
                 + "\nE - End Game"
                 + "\nQ - Back to Main Menu"
                 + "\n-------------------------------");

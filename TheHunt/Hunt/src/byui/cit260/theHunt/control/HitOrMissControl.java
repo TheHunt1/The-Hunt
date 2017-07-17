@@ -6,22 +6,34 @@
 package byui.cit260.theHunt.control;
 
 import exceptions.HitControlException;
+import java.util.Random;
 
 /**
  *
  * @author Dragon
  */
 public class HitOrMissControl {
+    
+    Random rand = new Random();
+    
+    int maxChance = 100;
+    int maxWeather = 50;
+    int maxJacket = 25;
 
     public int calcHitOrMiss(int chance, int weather, int jacket) throws HitControlException {
+        
+        chance = rand.nextInt(maxChance);
+        weather = rand.nextInt(maxWeather);
+        jacket = rand.nextInt(maxJacket);
+        
         if (chance < 0 & chance > 100) {
-            throw new HitControlException("Chance has to be between 0 and 100");
+            throw new HitControlException("Chance must be between 0 and 100");
         }
         if (weather > 0) {
-            throw new HitControlException("Weather can't be greater than 0");
+            throw new HitControlException("Weather must be between 0 and 50");
         }
         if (jacket < 0 & jacket > 25) {
-            throw new HitControlException("Jacket should be between 0 and 25");
+            throw new HitControlException("Jacket must between 0 and 25");
         }
 
         int hitOrMiss = chance + weather + jacket;
