@@ -41,6 +41,9 @@ public class WeaponStoreMenuView extends View {
                         + "\nto purchase a weapons. Here you will select and purchase "
                         + "\nweapons. ***");
                 break;
+            case "B":
+                new GameMenuView().display();
+                break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;

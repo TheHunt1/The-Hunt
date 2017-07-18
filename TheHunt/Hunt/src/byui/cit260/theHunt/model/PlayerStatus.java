@@ -15,7 +15,7 @@ public class PlayerStatus implements Serializable{
 //  private String name; 
   private int energy;
   private int money;
-  private int score;
+  private int currentScore;
 
     public PlayerStatus() {
     }
@@ -45,20 +45,20 @@ public class PlayerStatus implements Serializable{
         this.money = money;
     }
 
-    public int getScore() {
-        return score;
+    public int getCurrentScore() {
+        return currentScore;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setCurrentScore(int currentScore) {
+        this.currentScore = currentScore;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + this.energy;
-        hash = 43 * hash + this.money;
-        hash = 43 * hash + this.score;
+        hash = 13 * hash + this.energy;
+        hash = 13 * hash + this.money;
+        hash = 13 * hash + this.currentScore;
         return hash;
     }
 
@@ -80,7 +80,7 @@ public class PlayerStatus implements Serializable{
         if (this.money != other.money) {
             return false;
         }
-        if (this.score != other.score) {
+        if (this.currentScore != other.currentScore) {
             return false;
         }
         return true;
@@ -88,9 +88,7 @@ public class PlayerStatus implements Serializable{
 
     @Override
     public String toString() {
-        return "PlayerStatus{" + "energy=" + energy + ", money=" + money + ", score=" + score + '}';
+        return "PlayerStatus{" + "energy=" + energy + ", money=" + money + ", currentScore=" + currentScore + '}';
     }
     
-    
-  
 }

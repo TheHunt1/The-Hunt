@@ -53,6 +53,9 @@ public class GameMenuView extends View {
             case "W":
                 this.WeaponStore();
                 break;
+            case "S":
+                this.PlayerScore();
+                break;
             case "E":
                 this.QuitGame();
                 break;
@@ -123,6 +126,10 @@ public class GameMenuView extends View {
     private void QuitGame() {
         QuitGameView quitGameView = new QuitGameView();
         quitGameView.display();
+    }
+
+    private void PlayerScore() {
+        
     }
 
 }

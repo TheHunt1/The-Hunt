@@ -31,7 +31,7 @@ public class QuitGameView extends View {
             case "Y":
                 GameControl.quitGame();
             case "N":
-                new MainMenuView().display();
+                new GameMenuView().display();
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");

@@ -36,7 +36,7 @@ public class HitOrMissControl {
             throw new HitControlException("Jacket must between 0 and 25");
         }
 
-        int hitOrMiss = chance + weather + jacket;
+        int hitOrMiss = chance - weather + jacket;
 
         if (hitOrMiss > 0 & hitOrMiss < 70) {
             return 0;
